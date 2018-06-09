@@ -1,0 +1,26 @@
+{% extends '@Blog/base.html.twig' %}
+
+{% block Article %}
+    <!-- Blog Entries Column -->
+    <div class="col-md-8">
+
+        <h1 class="my-4">Symfony Blog
+            {#<small>Secondary Text</small>#}
+        </h1>
+
+        <!-- Blog Post -->
+        {% for article in articles %}
+        <div class="card mb-4">
+            <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+            <div class="card-body">
+                <h2 class="card-title"> {{ article.title }} </h2>
+                <p class="card-text">{{ article.description }}</p>
+                <a href="{{ path('blog_show_route', { 'slug': article.slug }) }}" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+                Posted on {{ article.createdAt|date("m/d/Y") }} by
+                <a href="#"></a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock Article%}

@@ -1,0 +1,31 @@
+{% extends '@Blog/base.html.twig' %}
+
+{% block Article %}
+    <!-- Post Content Column -->
+    <div class="col-lg-8">
+
+    <!-- Title -->
+    <h1 class="mt-4">{{ article.title }}</h1>
+
+    <hr>
+    <!-- Preview Image -->
+    <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+
+    <hr>
+    <!-- Post Description -->
+    <p class="lead">{{ article.description }}</p>
+
+    <hr>
+    <!-- Post Content -->
+    <p>{{ article.content }}</p>
+
+    <hr>
+    <!-- Date/Time -->
+    <p>Posted on {{ article.createdAt|date("m/d/Y") }}</p>
+    <!-- Author -->
+    <p class="lead">
+        by
+        <a href="#">Start Bootstrap</a>
+    </p>
+    <hr>
+{% endblock Article %}
