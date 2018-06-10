@@ -1000,7 +1000,7 @@
           return VERSION;
         }
       }, {
-        key: "Default",
+        key: "blog_view",
         get: function get() {
           return Default;
         }
@@ -1352,7 +1352,7 @@
           return VERSION;
         }
       }, {
-        key: "Default",
+        key: "blog_view",
         get: function get() {
           return Default;
         }
@@ -3686,7 +3686,7 @@
    */
 
   /**
-   * Default options provided to Popper.js constructor.<br />
+   * blog_view options provided to Popper.js constructor.<br />
    * These can be overriden using the `options` argument of Popper.js.<br />
    * To override an option, simply pass as 3rd argument an object with the same
    * structure of this object, example:
@@ -4355,7 +4355,7 @@
           return VERSION;
         }
       }, {
-        key: "Default",
+        key: "blog_view",
         get: function get() {
           return Default;
         }
@@ -4915,7 +4915,7 @@
           return VERSION;
         }
       }, {
-        key: "Default",
+        key: "blog_view",
         get: function get() {
           return Default;
         }
@@ -5594,7 +5594,7 @@
           return VERSION;
         }
       }, {
-        key: "Default",
+        key: "blog_view",
         get: function get() {
           return Default;
         }
@@ -5791,7 +5791,7 @@
           return VERSION;
         }
       }, {
-        key: "Default",
+        key: "blog_view",
         get: function get() {
           return Default;
         }
@@ -6113,7 +6113,7 @@
           return VERSION;
         }
       }, {
-        key: "Default",
+        key: "blog_view",
         get: function get() {
           return Default;
         }

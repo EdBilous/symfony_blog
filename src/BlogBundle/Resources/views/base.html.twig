@@ -8,13 +8,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> {% block title %} Blog Home - Start Bootstrap Template {% endblock title %}</title>
+    <title> {% block title %} Blog {% endblock title %}</title>
     {% block stylesheets %}
         <!-- Bootstrap core CSS -->
-        <link href="{{ asset('/public/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('/public/blog/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="{{ asset('/public/css/blog-home.css') }}" rel="stylesheet">
+        <link href="{{ asset('/public/blog/css/blog-home.css') }}" rel="stylesheet">
     {% endblock stylesheets %}
 </head>
 
@@ -24,7 +24,7 @@
 {% block navbar %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <a class="navbar-brand" href="/">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                     aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ path('blog_index_route') }}">Home
+                        <a class="nav-link" href="{{ path('blog_index_route') }}">Blog
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
@@ -67,9 +67,10 @@
                 <a class="page-link" href="#">Newer &rarr;</a>
             </li>
         </ul>
+        {% endblock sidebar %}
 
     </div>
-
+{% block Widget %}
     <!-- Sidebar Widgets Column -->
     <div class="col-md-4">
 
@@ -129,7 +130,7 @@
                 new Bootstrap 4 card containers!
             </div>
         </div>
-        {% endblock sidebar %}
+        {% endblock Widget %}
     </div>
 
 </div>
@@ -149,8 +150,8 @@
 
 {% block script %}
     <!-- Bootstrap core JavaScript -->
-    <script src="{{ asset('/public/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('/public/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('/public/blog/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('/public/blog/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 {% endblock script %}
 </body>
 

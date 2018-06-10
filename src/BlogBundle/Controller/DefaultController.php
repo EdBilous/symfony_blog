@@ -2,17 +2,17 @@
 
 namespace BlogBundle\Controller;
 
-use AppBundle\Controller\ArticleController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+//use AppBundle\Controller\ArticleController;
 //use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
     /**
      * Lists all article entities.
-     *
      * @Route("/blog", name="blog_index_route")
      */
     public function indexAction()
@@ -24,13 +24,11 @@ class DefaultController extends Controller
             ->findAll();
 
         dump($articles);
-        return $this->render('@Blog/Default/index.html.twig', ['articles' => $articles]);
+        return $this->render('@Blog/blog_view/articlesList.html.twig', ['articles' => $articles]);
     }
 
     /**
-     * Finds and displays a article entity.
-     *
-     * @Route("/blog/{slug}", name="blog_show_route")
+     * @Route("/blog/show/{slug}", name="blog_show_route")
      * @Method("GET")
      */
     public function singleAction($slug)
@@ -40,7 +38,7 @@ class DefaultController extends Controller
         $article = $em
             ->getRepository('AppBundle:Article')
             ->findOneBy(['slug' => $slug]);
-dump($article);
-        return $this->render('@Blog/Default/singleArticle.html.twig', ['article' => $article]);
+        dump($article);
+        return $this->render('@Blog/blog_view/articleShow.html.twig', ['article' => $article]);
     }
 }
