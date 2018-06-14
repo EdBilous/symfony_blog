@@ -18,8 +18,11 @@
                 <a href="{{ path('blog_show_route', { 'slug': article.slug }) }}" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
-                Posted on {{ article.createdAt|date("m/d/Y") }} by
-                <a href="#"></a>
+                {% for category in article.getCategories %}
+                    <p>Category: <a href="{{ path('blog_category_route', { 'category': category }) }}">{{ category }}</a></p>
+                {% endfor %}
+                Posted on {{ article.createdAt|date('F d, Y') }} by
+                    <a href="#">{{ article.getUsers['0'] }}</a>
             </div>
         </div>
     {% endfor %}

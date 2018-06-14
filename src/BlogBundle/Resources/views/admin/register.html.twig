@@ -1,0 +1,58 @@
+{% extends '@Blog/admin/login.html.twig' %}
+
+{% block form %}
+
+    <div class="card card-register mx-auto mt-5">
+        <div class="card-header">Register an Account</div>
+        <div class="card-body">
+
+            {{ form_start(form) }}
+
+            {{ form_errors(form) }}
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <label for="exampleInputName">First name</label>
+                        {{ form_row(form.firstName, { 'label': ' ' }) }}
+                        {#<input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="Enter first name">#}
+                    </div>
+                    <div class="col-md-4">
+                        <label for="exampleInputLastName">Last name</label>
+                        {{ form_row(form.lastName, { 'label': ' ' }) }}
+                        {#<input class="form-control" id="exampleInputLastName" type="text" aria-describedby="nameHelp" placeholder="Enter last name">#}
+                    </div>
+                    <div class="col-md-4">
+                        <label for="exampleInputLastName">Login</label>
+                        {{ form_row(form.login, { 'label': ' ' }) }}
+                        {#<input class="form-control" id="exampleInputLastName" type="text" aria-describedby="nameHelp" placeholder="Enter Login">#}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                {{ form_row(form.email, { 'label': ' ' }) }}
+                {#<input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email">#}
+            </div>
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="exampleInputPassword1">Password</label>
+                        {{ form_row(form.password, { 'label': ' ' }) }}
+                        {#<input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">#}
+                    </div>
+                    {#<div class="col-md-6">#}
+                    {#<label for="exampleConfirmPassword">Confirm password</label>#}
+                    {#<input class="form-control" id="exampleConfirmPassword" type="password" placeholder="Confirm password">#}
+                    {#</div>#}
+                </div>
+                <input class="btn btn-primary btn-block" type="submit" value="Register"/>
+                {{ form_end(form) }}
+            </div>
+            <div class="text-center">
+                <a class="d-block small mt-3" href="{{ path('admin_login_route') }}">Login Page</a>
+                {#<a class="d-block small" href="{{ path('admin_forgotpass_route') }}">Forgot Password?</a>#}
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock form %}

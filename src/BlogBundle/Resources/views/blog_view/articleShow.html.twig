@@ -1,38 +1,35 @@
 {% extends '@Blog/base.html.twig' %}
 
 {% block Article %}
-    <!-- Post Content Column -->
-    <div class="col-lg-8">
+<!-- Post Content Column -->
+<div class="col-lg-8">
 
-        <!-- Title -->
-        <h1 class="mt-4">{{ article.title }}</h1>
+    <!-- Title -->
+    <h1 class="mt-4">{{ article.title }}</h1>
+    <!-- Post Description -->
+    <p class="lead">{{ article.description }}</p>
 
-        <hr>
-        <!-- Preview Image -->
-        <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+    <hr>
+    <!-- Preview Image -->
+    <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
 
-        <hr>
-        <!-- Post Description -->
-        <p class="lead">{{ article.description }}</p>
+    <hr>
 
-        <hr>
-        <!-- Post Content -->
-        <p>{{ article.content }}</p>
+    <!-- Post Content -->
+    <p>{{ article.content }}</p>
 
-        <hr>
-        <!-- Date/Time -->
-        <p>Posted on {{ article.createdAt|date("m/d/Y") }}</p>
-        <!-- Author -->
-        <p class="lead">
-            by
-            <a href="#">Start Bootstrap</a>
-        </p>
-        <hr>
-{% endblock Article %}
-        {% block sidebar %}
-            <!-- Pagination -->
-            <ul class="pagination justify-content-center mb-4">
-                <li class="page-item">
-                    <a class="page-link" href="javascript:history.back()">&larr; назад</a>
-                </li>
+    <!-- Category -->
+    <div class="card-footer text-muted">
+            <p>Category: <a href="{{ path('blog_category_route', { 'category': article.getCategories['0'] }) }}">{{ article.getCategories['0'] }}</a></p>
+        Posted on {{ article.createdAt|date('F d, Y') }} by
+            <a href="#">{{ article.getUsers['0'] }}</a>
+    </div>
+    {% endblock Article %}
+
+    {% block sidebar %}
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center mb-4">
+        <li class="page-item">
+            <a class="page-link" href="javascript:history.back()">&larr; назад</a>
+        </li>
         {% endblock sidebar %}

@@ -34,10 +34,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sign Up</a>
+                    <a class="nav-link" href="{{ path('admin_register_route') }}">Sign Up</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Log In</a>
+                    <a class="nav-link" href="{{ path('admin_login_route') }}">Log In</a>
                 </li>
             </ul>
         </div>
@@ -47,7 +47,7 @@
 <header class="masthead text-center text-white">
     <div class="masthead-content">
         <div class="container">
-            <h1 style="color: #16181b;" class="masthead-heading mb-0">The Symfony Blog</h1>
+            <h1 style="color: #171a1d;" class="masthead-heading mb-0">The Symfony Blog</h1>
             <h2 class="masthead-subheading mb-0"></h2>
             <a href="{{ path('blog_index_route') }}" class="btn btn-primary btn-xl rounded-pill mt-5">start reading</a>
         </div>

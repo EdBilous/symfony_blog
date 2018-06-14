@@ -23,7 +23,9 @@ class ArticleType extends AbstractType
             ->add('users')
             ->add('categories')
         ;
-    }/**
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)

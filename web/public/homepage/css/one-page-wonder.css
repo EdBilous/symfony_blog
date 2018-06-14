@@ -21,7 +21,7 @@ h6 {
 }
 
 .bg-black {
-  background-color: #000 !important;
+  background-color: #1d2124 !important;
 }
 
 .rounded-pill {
@@ -87,11 +87,11 @@ header.masthead .masthead-content .masthead-subheading {
 }
 
 .btn-primary {
-  background-color: #1e7e34;
-  border-color: #1c7430;
+  background-color: #0c5460;
+  border-color: #0c5460;
 }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-  background-color: #0c5460 !important;
-  border-color: #0c5460 !important;
+  background-color: #062c33 !important;
+  border-color: #062c33 !important;
 }

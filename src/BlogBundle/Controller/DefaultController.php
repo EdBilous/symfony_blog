@@ -5,15 +5,15 @@ namespace BlogBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 //use AppBundle\Controller\ArticleController;
 //use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
+
     /**
      * Lists all article entities.
-     * @Route("/blog", name="blog_index_route")
+     * @Route("/blog/index.html", name="blog_index_route")
      */
     public function indexAction()
     {
@@ -23,8 +23,7 @@ class DefaultController extends Controller
             ->getRepository('AppBundle:Article')
             ->findAll();
 
-        dump($articles);
-        return $this->render('@Blog/blog_view/articlesList.html.twig', ['articles' => $articles]);
+        return $this->render('@Blog/blog_view/index.html.twig', ['articles' => $articles]);
     }
 
     /**
@@ -38,7 +37,27 @@ class DefaultController extends Controller
         $article = $em
             ->getRepository('AppBundle:Article')
             ->findOneBy(['slug' => $slug]);
-        dump($article);
+
+        if (!$article) {
+            throw $this->createNotFoundException("No article found for $slug");
+        }
+
         return $this->render('@Blog/blog_view/articleShow.html.twig', ['article' => $article]);
+    }
+
+    /**
+     * @Route("/blog/category/{category}", name="blog_category_route")
+     * @Method("GET")
+     */
+    public function categoryAction($category)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $categorybytitle = $em
+            ->getRepository('AppBundle:Category')
+            ->findBy(['title' => $category]);
+
+        dump($categorybytitle['0']);
+        return $this->render('@Blog/blog_view/categoryShow.html.twig', ['categorybytitle' => $categorybytitle['0']]);
     }
 }
