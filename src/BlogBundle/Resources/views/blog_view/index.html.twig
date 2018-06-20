@@ -9,7 +9,7 @@
         </h1>
 
         <!-- Blog Post -->
-        {% for article in articles %}
+    {% for article in articles %}
         <div class="card mb-4">
             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
             <div class="card-body">
@@ -18,11 +18,15 @@
                 <a href="{{ path('blog_show_route', { 'slug': article.slug }) }}" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
-                {% for category in article.getCategories %}
-                    <p>Category: <a href="{{ path('blog_category_route', { 'category': category }) }}">{{ category }}</a></p>
-                {% endfor %}
+                <p>Category:
+                    {% for category in article.getCategories %}
+                            <a href="{{ path('blog_category_route', { 'category': category }) }}">{{ category }}</a>
+                    {% endfor %}
+                </p>
                 Posted on {{ article.createdAt|date('F d, Y') }} by
-                    <a href="#">{{ article.getUsers['0'] }}</a>
+                {% for user in article.getUsers %}
+                    <a href="#">{{ user }}</a>
+                {% endfor %}
             </div>
         </div>
     {% endfor %}

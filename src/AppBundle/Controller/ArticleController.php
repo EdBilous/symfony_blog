@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\AppBundle;
 use AppBundle\Entity\Article;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -11,14 +12,14 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Article controller.
  *
- * @Route("article")
+ * @Route("admin/")
  */
 class ArticleController extends Controller
 {
     /**
      * Lists all article entities.
      *
-     * @Route("/", name="article_index")
+     * @Route("articles/", name="admin_articles")
      * @Method("GET")
      */
     public function indexAction()
@@ -31,7 +32,7 @@ class ArticleController extends Controller
 
         dump($articles);
 
-        return $this->render('article/index.html.twig', array(
+        return $this->render('admin/article_list.html.twig', array(
             'articles' => $articles,
         ));
     }
@@ -39,7 +40,7 @@ class ArticleController extends Controller
     /**
      * Creates a new article entity.
      *
-     * @Route("/new", name="article_new")
+     * @Route("articles/new", name="admin_article_new")
      * @Method({"GET", "POST"})
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
@@ -47,18 +48,18 @@ class ArticleController extends Controller
     public function newAction(Request $request)
     {
         $article = new Article();
+
         $form = $this->createForm('AppBundle\Form\ArticleType', $article);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($article);
-            $em->flush();
+            $articleManager = $this->get("blog.article_manager.service");
+            $articleManager->articleCreate($article);
 
             return $this->redirectToRoute('article_show', array('id' => $article->getId()));
         }
 
-        return $this->render('article/new.html.twig', array(
+        return $this->render('admin/article_new.html.twig', array(
             'article' => $article,
             'form' => $form->createView(),
         ));
@@ -67,7 +68,7 @@ class ArticleController extends Controller
     /**
      * Finds and displays a article entity.
      *
-     * @Route("/{id}", name="article_show")
+     * @Route("articles/{id}", name="article_show")
      * @Method("GET")
      */
     public function showAction(Article $article)
@@ -83,7 +84,7 @@ class ArticleController extends Controller
     /**
      * Displays a form to edit an existing article entity.
      *
-     * @Route("/{id}/edit", name="article_edit")
+     * @Route("articles/{id}/edit", name="article_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Article $article)
@@ -108,7 +109,7 @@ class ArticleController extends Controller
     /**
      * Deletes a article entity.
      *
-     * @Route("/{id}", name="article_delete")
+     * @Route("articles/{id}", name="article_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Article $article)

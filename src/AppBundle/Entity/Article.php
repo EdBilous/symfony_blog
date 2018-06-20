@@ -4,7 +4,6 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToMany;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Article
@@ -85,8 +84,8 @@ class Article
     private $image;
 
     public function __construct() {
-        $this->users = new ArrayCollection();
-        $this->categories = new ArrayCollection();
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 
@@ -341,3 +340,4 @@ class Article
         return $this->image;
     }
 }
+

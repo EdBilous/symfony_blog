@@ -57,7 +57,10 @@ class DefaultController extends Controller
             ->getRepository('AppBundle:Category')
             ->findBy(['title' => $category]);
 
-        dump($categorybytitle['0']);
+        if (!$categorybytitle) {
+            throw $this->createNotFoundException("No category found for $categorybytitle");
+        }
+//        dump($categorybytitle['0']);
         return $this->render('@Blog/blog_view/categoryShow.html.twig', ['categorybytitle' => $categorybytitle['0']]);
     }
 }

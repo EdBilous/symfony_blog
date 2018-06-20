@@ -9,7 +9,7 @@
 namespace BlogBundle\Controller;
 
 //use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use AppBundle\AppBundle;
+//use AppBundle\AppBundle;
 use AppBundle\Entity\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

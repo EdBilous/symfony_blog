@@ -20,9 +20,14 @@
 
     <!-- Category -->
     <div class="card-footer text-muted">
-            <p>Category: <a href="{{ path('blog_category_route', { 'category': article.getCategories['0'] }) }}">{{ article.getCategories['0'] }}</a></p>
+            <p>Category:
+                {% for category in article.getCategories %}
+                    <a href="{{ path('blog_category_route', { 'category': category }) }}">{{ category }}</a>
+                {% endfor %}</p>
         Posted on {{ article.createdAt|date('F d, Y') }} by
-            <a href="#">{{ article.getUsers['0'] }}</a>
+        {% for user in article.getUsers %}
+            <a href="#">{{ user }}</a>
+        {% endfor %}
     </div>
     {% endblock Article %}
 
