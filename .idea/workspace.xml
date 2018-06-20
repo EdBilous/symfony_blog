@@ -2,60 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9d5bcd7-7e78-455d-84f6-ba081e850ae1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/admin/article_list.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/admin/article_new.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/admin/users_list.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/article/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/article/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/article/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/article/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/article/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/article/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/article/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/article/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/category/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/category/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/category/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/category/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/category/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/category/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/category/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/category/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/ArticleType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlogBundle/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlogBundle/Controller/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlogBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlogBundle/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlogBundle/Resources/views/admin/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlogBundle/Resources/views/admin/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlogBundle/Resources/views/admin/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlogBundle/Resources/views/admin/register.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlogBundle/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlogBundle/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlogBundle/Resources/views/blog_view/articleShow.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlogBundle/Resources/views/blog_view/articleShow.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlogBundle/Resources/views/blog_view/categoryShow.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlogBundle/Resources/views/blog_view/categoryShow.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlogBundle/Resources/views/blog_view/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlogBundle/Resources/views/blog_view/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/css/font-awesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/css/font-awesome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/css/font-awesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/less/font-awesome.less" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/less/font-awesome.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/less/icons.less" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/less/icons.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/less/variables.less" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/less/variables.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/scss/_icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/scss/_icons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/scss/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/scss/font-awesome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/font-awesome/scss/font-awesome.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/jquery/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/admin/vendor/jquery/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/admin/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Subscriber/UpdaterSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Subscriber/UpdaterSubscriber.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -114,8 +61,8 @@
       <file leaf-file-name="UpdaterSubscriber.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Subscriber/UpdaterSubscriber.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="138" column="7" selection-start-line="138" selection-start-column="7" selection-end-line="138" selection-end-column="7" />
+            <state relative-caret-position="-411">
+              <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
               <folding>
                 <element signature="e#120#149#0#PHP" expanded="true" />
                 <element signature="e#2648#2667#1#PHP" expanded="true" />
@@ -132,24 +79,6 @@
               <folding>
                 <element signature="e#34#74#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoryController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CategoryController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-684">
-              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ArticleController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1746">
-              <caret line="126" column="5" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -534,12 +463,12 @@
       <workItem from="1529425517957" duration="18109000" />
       <workItem from="1529480803175" duration="2327000" />
       <workItem from="1529490405755" duration="815000" />
-      <workItem from="1529491248316" duration="5008000" />
+      <workItem from="1529491248316" duration="5833000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91115000" />
+    <option name="totallyTimeSpent" value="91940000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -562,7 +491,7 @@
       <window_info anchor="bottom" id="Run" order="4" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32922733" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49439463" visible="true" weight="0.17615467" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49439463" visible="true" weight="0.17615467" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32975295" />
       <window_info id="Structure" order="2" sideWeight="0.5056054" side_tool="true" weight="0.24973147" />
@@ -925,8 +854,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Subscriber/UpdaterSubscriber.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="138" column="7" selection-start-line="138" selection-start-column="7" selection-end-line="138" selection-end-column="7" />
+        <state relative-caret-position="-411">
+          <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
           <folding>
             <element signature="e#120#149#0#PHP" expanded="true" />
             <element signature="e#2648#2667#1#PHP" expanded="true" />

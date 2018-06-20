@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: oleg
- * Date: 18.06.18
- * Time: 20:06
- */
 
 namespace AppBundle\Subscriber;
 
@@ -111,7 +105,6 @@ class UpdaterSubscriber implements EventSubscriber
      */
     private function getUrl($str)
     {
-
         $articleUrl = mb_strtolower($str);
         $articleUrl = str_replace(' ', '-', $articleUrl);
         $articleUrl = $this->transliteration($articleUrl);
