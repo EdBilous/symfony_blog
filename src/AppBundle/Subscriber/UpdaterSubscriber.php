@@ -115,11 +115,11 @@ class UpdaterSubscriber implements EventSubscriber
         if (!$articleIsset) {
             return $articleUrl;
         } else {
-            $url = $articleIsset->url;
+            $url = $articleIsset->getSlug();
             $exUrl = explode('-', $url);
             if ($exUrl) {
                 $temp = (int)end($exUrl);
-                $newUrl = $exUrl[0] . '-' . ++$temp;
+                $newUrl = $url . '-' . ++$temp;
             } else {
                 $temp = 0;
                 $newUrl = $articleUrl . '-' . ++$temp;
