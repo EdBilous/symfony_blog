@@ -2,33 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9d5bcd7-7e78-455d-84f6-ba081e850ae1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/article_list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/article_list.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/article_new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/article_new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin/users_list.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin/users_list.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/article/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/article/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/security.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/security.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/ArticleType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/ArticleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Subscriber/UpdaterSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Subscriber/UpdaterSubscriber.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlogBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlogBundle/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlogBundle/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlogBundle/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlogBundle/Resources/views/blog_view/articleShow.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlogBundle/Resources/views/blog_view/articleShow.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlogBundle/Resources/views/blog_view/categoryShow.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlogBundle/Resources/views/blog_view/categoryShow.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlogBundle/Resources/views/blog_view/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlogBundle/Resources/views/blog_view/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlogBundle/Services/ArticleManagerService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlogBundle/Services/ArticleManagerService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/homepage/css/one-page-wonder.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/homepage/css/one-page-wonder.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/09b5030219ba9fce3d8e3e9f1f96b2ad.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/0c204ae5e7a4a728ea95721365919317.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/251dd9b7c4121b58635c31c4a8b41b35.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/294987a3a0068201ea059abf77ab2f69.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/303a537abca64a884327c77d019764e7.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/3966df8759a91623ec71a0d949e2b9a4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/5d44fc0e52384c7a4250c948a5a13e57.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/5f57b8b8747bb4229e48698ebdeeadf1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/6be118e5822994f3fc7596e42fc65691.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/9dfee6d8d18b33e9928f776bbe26136c.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/b4ed4d864e0a7e0074fddba5e4c1fc31.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/b5bcef8bc288e37c38c48946eca1df73.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/b7a4fc55b05e59455bedb288dc60df98.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/cd5b82828195e944889b01fac291e729.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/e4f83c367fed18ff30fb0f5833d3d7fc.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/ea3ede19bf73f4b3451822b26e694e3e.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/f7261e381fef859a77cceb3d3ba82809.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/images/fe457d7bf5387a3e53bab40134e41323.jpeg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -105,7 +96,7 @@
       <file leaf-file-name="one-page-wonder.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/public/homepage/css/one-page-wonder.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="723">
+            <state relative-caret-position="430">
               <caret line="96" column="1" lean-forward="true" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
             </state>
           </provider>
@@ -513,12 +504,12 @@
       <workItem from="1529513615291" duration="1800000" />
       <workItem from="1529531040493" duration="1157000" />
       <workItem from="1529561845636" duration="324000" />
-      <workItem from="1529746368491" duration="66000" />
+      <workItem from="1529746368491" duration="530000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96153000" />
+    <option name="totallyTimeSpent" value="96617000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -531,7 +522,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1922" height="1054" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="8" weight="0.3295964" />
       <window_info id="DB Browser" order="0" />
@@ -540,8 +530,8 @@
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="4" />
       <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3281075" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49439463" visible="true" weight="0.18689582" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3281075" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49439463" visible="true" weight="0.18689582" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32975295" />
       <window_info id="Structure" order="2" sideWeight="0.5056054" side_tool="true" weight="0.24973147" />
@@ -908,7 +898,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/homepage/css/one-page-wonder.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
+        <state relative-caret-position="430">
           <caret line="96" column="1" lean-forward="true" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
         </state>
       </provider>
