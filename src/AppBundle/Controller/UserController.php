@@ -3,9 +3,10 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * User controller.
@@ -18,16 +19,34 @@ class UserController extends Controller
      * Lists all user entities.
      *
      * @Route("/users/", name="admin_users")
-     * @Method("GET")
+     * @Method({"GET", "POST"})
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+
         $em = $this->getDoctrine()->getManager();
 
         $users = $em->getRepository('AppBundle:User')->findAll();
 
+        $form = $this->createForm('AppBundle\Form\SearchType');
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $usersRepository = $this->getDoctrine()->getRepository('AppBundle:User');
+
+            $inquiry = $form->getData()['inquiry'];
+            $result = $usersRepository->searchBy($inquiry);
+
+            return $this->render('admin/users_search.html.twig', array(
+                'users' => $result,
+                'inquiry' => $inquiry,
+                'form' => $form->createView(),
+            ));
+        }
+
         return $this->render('admin/users_list.twig', array(
             'users' => $users,
+            'form' => $form->createView(),
         ));
     }
 
@@ -130,7 +149,6 @@ class UserController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('user_delete', array('id' => $user->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }

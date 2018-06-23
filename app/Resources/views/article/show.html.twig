@@ -39,7 +39,7 @@
             <a href="{{ path('admin_articles') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('article_edit', { 'id': article.id }) }}">Edit</a>
+            <a href="{{ path('article_edit', { 'slug': article.slug }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

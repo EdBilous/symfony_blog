@@ -1,6 +1,7 @@
 # Learn more about services, parameters and containers at
 # https://symfony.com/doc/current/service_container.html
 parameters:
+    images_directory: '../../web/uploads/images'
     #parameter_name: value
 
 services:
@@ -48,3 +49,12 @@ services:
         tags:
             - { name: doctrine.event_subscriber, connection: default }
 
+    BlogBundle\Services\ImagesUploaderService:
+        public: true
+        arguments:
+        $targetDir: '%images_directory%'
+
+    AppBundle\EventListener\ImagesUploadListener:
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            - { name: doctrine.event_listener, event: preUpdate }

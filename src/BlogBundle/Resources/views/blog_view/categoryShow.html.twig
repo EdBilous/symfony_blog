@@ -3,14 +3,17 @@
 {% block Article %}
     <!-- Blog Entries Column -->
     <div class="col-md-8">
-        <p class="my-4">
-            Category: {{ categorybytitle.title }}
-        </p>
-    <!-- Blog Post -->
 
+    <h2 class="my-4">
+        <small>Category: {{ categorybytitle.title }}</small>
+    </h2>
+
+    <!-- Blog Post -->
     {% for article in categorybytitle.getArticles %}
         <div class="card mb-4">
-                <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+            {#{% if article.image %}#}
+                {#<img class="card-img-top" src="{{ asset('uploads/images/' ~ article.image) }}" alt="Card image cap">#}
+            {#{% endif %}#}
             <div class="card-body">
                 <h2 class="card-title"> {{ article.title }} </h2>
                 <p class="card-text">{{ article.description }}</p>

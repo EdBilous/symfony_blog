@@ -5,17 +5,19 @@ namespace BlogBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+
 //use AppBundle\Controller\ArticleController;
-//use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
 
     /**
      * Lists all article entities.
+     * @Method({"GET", "POST"})
      * @Route("/blog/index.html", name="blog_index_route")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -23,7 +25,25 @@ class DefaultController extends Controller
             ->getRepository('AppBundle:Article')
             ->findAll();
 
-        return $this->render('@Blog/blog_view/index.html.twig', ['articles' => $articles]);
+        $form = $this->createForm('AppBundle\Form\SearchType');
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $articlesRepository = $this->getDoctrine()->getRepository('AppBundle:Article');
+            $inquiry = $form->getData()['inquiry'];
+            $result = $articlesRepository->searchBy($inquiry);
+
+            return $this->render('@Blog/blog_view/articleSearch.html.twig', [
+                'articles' => $result,
+                'inquiry' => $inquiry,
+                'form' => $form->createView(),
+            ]);
+        }
+
+        return $this->render('@Blog/blog_view/index.html.twig', [
+            'articles' => $articles,
+            'form' => $form->createView(),
+        ]);
     }
 
     /**
@@ -58,9 +78,9 @@ class DefaultController extends Controller
             ->findBy(['title' => $category]);
 
         if (!$categorybytitle) {
-            throw $this->createNotFoundException("No category found for $categorybytitle");
+            throw $this->createNotFoundException("No category found for $category");
         }
-//        dump($categorybytitle['0']);
+
         return $this->render('@Blog/blog_view/categoryShow.html.twig', ['categorybytitle' => $categorybytitle['0']]);
     }
 }

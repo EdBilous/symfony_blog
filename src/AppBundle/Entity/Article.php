@@ -4,6 +4,8 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToMany;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Article
@@ -38,7 +40,7 @@ class Article
 
     /**
      * @var string
-     *
+     * @Gedmo\Slug(fields={"title"})
      * @ORM\Column(name="slug", type="string", length=255, unique=true)
      */
     private $slug;
@@ -80,6 +82,7 @@ class Article
      * @var string
      *
      * @ORM\Column(name="image", type="string", length=150, nullable=true)
+     * @Assert\File(mimeTypes={ "image/jpeg" })
      */
     private $image;
 

@@ -2,89 +2,115 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\AppBundle;
 use AppBundle\Entity\Article;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use BlogBundle\Services\ImagesUploaderService;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+
 
 /**
  * Article controller.
  *
- * @Route("admin/")
+ * @Route("admin")
  */
 class ArticleController extends Controller
 {
     /**
      * Lists all article entities.
      *
-     * @Route("articles/", name="admin_articles")
-     * @Method("GET")
+     * @Route("/articles", name="admin_articles")
+     * @Method({"GET", "POST"})
      */
-    public function indexAction()
+    public function articlesAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-
         $articles = $em
             ->getRepository('AppBundle:Article')
             ->findAll();
 
-        dump($articles);
+        $form = $this->createForm('AppBundle\Form\SearchType');
+        $form->handleRequest($request);
 
-        return $this->render('admin/article_list.html.twig', array(
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $articlesRepository = $this->getDoctrine()->getRepository('AppBundle:Article');
+            $inquiry = $form->getData()['inquiry'];
+            $result = $articlesRepository->searchBy($inquiry);
+
+            return $this->render('admin/article_search.html.twig', [
+                'articles' => $result,
+                'inquiry' => $inquiry,
+                'form' => $form->createView(),
+            ]);
+        }
+
+        return $this->render('admin/article_list.html.twig', [
             'articles' => $articles,
-        ));
+            'form' => $form->createView(),
+        ]);
     }
 
     /**
      * Creates a new article entity.
      *
-     * @Route("articles/new", name="admin_article_new")
+     * @Route("/articles/new", name="admin_article_new")
      * @Method({"GET", "POST"})
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request, ImagesUploaderService $ImagesUploaderService)
     {
         $article = new Article();
+
 
         $form = $this->createForm('AppBundle\Form\ArticleType', $article);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $file = $article->getImage();
+            if ($file) {
+
+                $fileName = $ImagesUploaderService->upload($file);
+                $article->setImage($fileName);
+
+            }
+
             $articleManager = $this->get("blog.article_manager.service");
             $articleManager->articleCreate($article);
 
-            return $this->redirectToRoute('article_show', array('id' => $article->getId()));
+            return $this->redirectToRoute('article_show', ['slug' => $article->getSlug()]);
         }
 
-        return $this->render('admin/article_new.html.twig', array(
+        return $this->render('admin/article_new.html.twig', [
             'article' => $article,
             'form' => $form->createView(),
-        ));
+        ]);
     }
 
     /**
      * Finds and displays a article entity.
      *
-     * @Route("articles/{id}", name="article_show")
+     * @Route("/articles/{slug}", name="article_show")
      * @Method("GET")
      */
     public function showAction(Article $article)
     {
         $deleteForm = $this->createDeleteForm($article);
 
-        return $this->render('article/show.html.twig', array(
+        return $this->render('admin/article_show.html.twig', [
             'article' => $article,
             'delete_form' => $deleteForm->createView(),
-        ));
+        ]);
     }
+
 
     /**
      * Displays a form to edit an existing article entity.
      *
-     * @Route("articles/{id}/edit", name="article_edit")
+     * @Route("articles/{slug}/edit", name="article_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Article $article)
@@ -95,21 +121,20 @@ class ArticleController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('article_edit', array('id' => $article->getId()));
+            return $this->redirectToRoute('article_show', ['slug' => $article->getSlug()]);
         }
 
-        return $this->render('article/edit.html.twig', array(
+        return $this->render('admin/article_edit.html.twig', [
             'article' => $article,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        ));
+        ]);
     }
 
     /**
      * Deletes a article entity.
      *
-     * @Route("articles/{id}", name="article_delete")
+     * @Route("/articles/{id}/delete", name="article_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Article $article)
@@ -123,7 +148,7 @@ class ArticleController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('article_index');
+        return $this->redirectToRoute('admin_articles');
     }
 
     /**
@@ -136,9 +161,8 @@ class ArticleController extends Controller
     private function createDeleteForm(Article $article)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('article_delete', array('id' => $article->getId())))
+            ->setAction($this->generateUrl('article_delete', ['id' => $article->getId()]))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }

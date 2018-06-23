@@ -64,23 +64,23 @@
 
         {% block sidebar %}
         <!-- Pagination -->
-        <ul class="pagination justify-content-center mb-4">
-            <li class="page-item">
-                <a class="page-link" href="#">&larr; Older</a>
-            </li>
-            <li class="page-item disabled">
-                <a class="page-link" href="#">Newer &rarr;</a>
-            </li>
-        </ul>
+        {#<ul class="pagination justify-content-center mb-4">#}
+            {#<li class="page-item">#}
+                {#<a class="page-link" href="#">&larr; Older</a>#}
+            {#</li>#}
+            {#<li class="page-item disabled">#}
+                {#<a class="page-link" href="#">Newer &rarr;</a>#}
+            {#</li>#}
+        {#</ul>#}
         {% endblock sidebar %}
 
     </div>
-{% block Widget %}
     <!-- Sidebar Widgets Column -->
     <div class="col-md-4">
 
         <!-- Search Widget -->
-        <div class="card my-4">
+        {% block Search %}
+            <div class="card my-4">
             <h5 class="card-header">Search</h5>
             <div class="card-body">
                 <div class="input-group">
@@ -91,7 +91,7 @@
                 </div>
             </div>
         </div>
-
+        {% endblock Search %}
         <!-- Categories Widget -->
         <div class="card my-4">
             <h5 class="card-header">Categories</h5>
@@ -119,7 +119,6 @@
                 new Bootstrap 4 card containers!
             </div>
         </div>
-        {% endblock Widget %}
     </div>
 
 </div>

@@ -1,6 +1,8 @@
 <?php
 
 namespace AppBundle\Repository;
+use AppBundle\Entity\User;
+
 
 /**
  * UserRepository
@@ -10,4 +12,15 @@ namespace AppBundle\Repository;
  */
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function searchBy($searchstring)
+    {
+        return $this->createQueryBuilder('u')
+            ->where('u.firstName  LIKE :param')
+            ->orWhere('u.lastName  LIKE :param')
+            ->orWhere('u.login  LIKE :param')
+            ->setParameter('param', '%' . $searchstring .'%')
+            ->getQuery()
+            ->getResult();
+    }
+
 }

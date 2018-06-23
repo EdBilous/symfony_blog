@@ -5,10 +5,11 @@
     <div class="col-md-8">
 
         <h2 class="my-4">
-            <small>Latest News</small>
+            <small>Search on request « {{ inquiry }} »</small>
         </h2>
 
     <!-- Blog Post -->
+    {% if articles %}
     {% for article in articles %}
         <div class="card mb-4">
             {#{% if article.image %}#}
@@ -32,6 +33,9 @@
             </div>
         </div>
     {% endfor %}
+    {% else %}
+    {{ "nothing found, try changing request" }}
+    {% endif %}
 {% endblock Article%}
 
  {% block Search %}
@@ -39,14 +43,14 @@
             <h5 class="card-header">Search</h5>
             <div class="card-body">
                 <div class="input-group">
-    {{ form_start(form) }}
-    {{ form_errors(form) }}
+                     {{ form_start(form) }}
+                     {{ form_errors(form) }}
 
-    {{ form_row(form.inquiry) }}
-        <span class="input-group-btn">
-        {{ form_row(form.submit) }}
-        </span>
-    {{ form_end(form) }}
+                     {{ form_row(form.inquiry) }}
+                     <span class="input-group-btn">
+                        {{ form_row(form.submit) }}
+                    </span>
+                    {{ form_end(form) }}
                 </div>
             </div>
         </div>

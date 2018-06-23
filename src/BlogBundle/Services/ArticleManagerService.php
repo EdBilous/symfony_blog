@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: oleg
- * Date: 18.06.18
- * Time: 19:39
- */
+
 
 namespace BlogBundle\Services;
 

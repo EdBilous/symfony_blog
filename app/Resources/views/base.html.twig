@@ -49,8 +49,12 @@
         <!-- /.navbar-header -->
 
         <ul class="nav navbar-top-links navbar-right">
-            <li class="dropdown">
-                <!-- /.dropdown -->
+            <li class="nav-item" data-toggle="tooltip" data-placement="right">
+                <a class="nav-link" href="{{ path('blog_index_route') }}">
+                    <i class=""></i>Blog</a>
+            </li>
+
+            <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -64,7 +68,7 @@
                     <li><a href=""><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                     </li>
                 </ul>
-                <!-- /.dropdown-user -->
+            <!-- /.dropdown-user -->
             </li>
             <!-- /.dropdown -->
         </ul>
@@ -75,12 +79,17 @@
                 <ul class="nav" id="side-menu">
                     <li class="sidebar-search">
                         <div class="input-group custom-search-form">
-                            <input type="text" class="form-control" placeholder="Search...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
+                    {% block Searchform %}
+
+
+                            {#<input type="text" class="form-control" placeholder="Search...">#}
+                            {#<span class="input-group-btn">#}
+                                {#<button class="btn btn-default" type="button">#}
+                                    {#<i class="fa fa-search"></i>#}
+                                {#</button>#}
+                            {#</span>   #}
+
+                    {% endblock Searchform %}
                         </div>
                         <!-- /input-group -->
                     </li>
@@ -103,6 +112,7 @@
         </div>
         <!-- /.navbar-static-side -->
     </nav>
+</div>
     {% block content %}
 
     {% endblock content %}

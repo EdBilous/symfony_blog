@@ -91,74 +91,84 @@ class UpdaterSubscriber implements EventSubscriber
             $entity->setUpdatedAt(new \DateTime('now'));
         }
 
-        if (
-            method_exists($entity, 'setSlug')
-        ) {
-            $entity->setSlug($this->getUrl($entity->getTitle()));
-        }
+//        if (
+//            method_exists($entity, 'setImage')
+//        &&
+//            isset($_FILES['image'])
+//        &&
+//        ) {
+//            $entity->(new \$_FILES['image']);
+//        }
+
+
+//        if (
+//            method_exists($entity, 'setSlug')
+//        ) {
+//            $entity->setSlug($this->getUrl($entity->getTitle()));
+//        }
 
     }
-
-    /**
-     * @param $str
-     * @return mixed|null|string|string[]
-     */
-    private function getUrl($str)
-    {
-        $articleUrl = mb_strtolower($str);
-        $articleUrl = str_replace(' ', '-', $articleUrl);
-        $articleUrl = $this->transliteration($articleUrl);
-        $articleIsset = $this->em
-            ->getRepository('AppBundle:Article')
-            ->findOneBy(['slug' => $articleUrl]);
-
-        if (!$articleIsset) {
-            return $articleUrl;
-        } else {
-            $url = $articleIsset->getSlug();
-            $exUrl = explode('-', $url);
-            if ($exUrl) {
-                $temp = (int)end($exUrl);
-                $newUrl = $url . '-' . ++$temp;
-            } else {
-                $temp = 0;
-                $newUrl = $articleUrl . '-' . ++$temp;
-            }
-            return $this->getUrl($newUrl);
-        }
-    }
-
-    /**
-     * @param $str
-     * @return string
-     */
-    private function transliteration($str)
-    {
-        $st = strtr($str,
-            array(
-                'а' => 'a', 'б' => 'b', 'в' => 'v', 'г' => 'g', 'д' => 'd',
-                'е' => 'e', 'ё' => 'e', 'ж' => 'zh', 'з' => 'z', 'и' => 'i',
-                'к' => 'k', 'л' => 'l', 'м' => 'm', 'н' => 'n', 'о' => 'o',
-                'п' => 'p', 'р' => 'r', 'с' => 's', 'т' => 't', 'у' => 'u',
-                'ф' => 'ph', 'х' => 'h', 'ы' => 'y', 'э' => 'e', 'ь' => '',
-                'ъ' => '', 'й' => 'y', 'ц' => 'c', 'ч' => 'ch', 'ш' => 'sh',
-                'щ' => 'sh', 'ю' => 'yu', 'я' => 'ya', ' ' => '_', '<' => '_',
-                '>' => '_', '?' => '_', '"' => '_', '=' => '_', '/' => '_',
-                '|' => '_'
-            )
-        );
-        $st2 = strtr($st,
-            array(
-                'А' => 'a', 'Б' => 'b', 'В' => 'v', 'Г' => 'g', 'Д' => 'd',
-                'Е' => 'e', 'Ё' => 'e', 'Ж' => 'zh', 'З' => 'z', 'И' => 'i',
-                'К' => 'k', 'Л' => 'l', 'М' => 'm', 'Н' => 'n', 'О' => 'o',
-                'П' => 'p', 'Р' => 'r', 'С' => 's', 'Т' => 't', 'У' => 'u',
-                'Ф' => 'ph', 'Х' => 'h', 'Ы' => 'y', 'Э' => 'e', 'Ь' => '',
-                'Ъ' => '', 'Й' => 'y', 'Ц' => 'c', 'Ч' => 'ch', 'Ш' => 'sh',
-                'Щ' => 'sh', 'Ю' => 'yu', 'Я' => 'ya'
-            )
-        );
-        $translit = $st2;
-        return $translit;
-    }
+//
+//    /**
+//     * @param $str
+//     * @return mixed|null|string|string[]
+//     */
+//    private function getUrl($str)
+//    {
+//        $articleUrl = mb_strtolower($str);
+//        $articleUrl = str_replace(' ', '-', $articleUrl);
+//        $articleUrl = $this->transliteration($articleUrl);
+//        $articleIsset = $this->em
+//            ->getRepository('AppBundle:Article')
+//            ->findOneBy(['slug' => $articleUrl]);
+//
+//        if (!$articleIsset) {
+//            return $articleUrl;
+//        } else {
+//            $url = $articleIsset->getSlug();
+//            $exUrl = explode('-', $url);
+//            if ($exUrl) {
+//                $temp = (int)end($exUrl);
+//                $newUrl = $exUrl[0] . '-' . ++$temp;
+//            } else {
+//                $temp = 0;
+//                $newUrl = $articleUrl . '-' . ++$temp;
+//            }
+//            return $this->getUrl($newUrl);
+//        }
+//    }
+//
+//    /**
+//     * @param $str
+//     * @return string
+//     */
+//    private function transliteration($str)
+//    {
+//        $st = strtr($str,
+//            array(
+//                'а' => 'a', 'б' => 'b', 'в' => 'v', 'г' => 'g', 'д' => 'd',
+//                'е' => 'e', 'ё' => 'e', 'ж' => 'zh', 'з' => 'z', 'и' => 'i',
+//                'к' => 'k', 'л' => 'l', 'м' => 'm', 'н' => 'n', 'о' => 'o',
+//                'п' => 'p', 'р' => 'r', 'с' => 's', 'т' => 't', 'у' => 'u',
+//                'ф' => 'ph', 'х' => 'h', 'ы' => 'y', 'э' => 'e', 'ь' => '',
+//                'ъ' => '', 'й' => 'y', 'ц' => 'c', 'ч' => 'ch', 'ш' => 'sh',
+//                'щ' => 'sh', 'ю' => 'yu', 'я' => 'ya', ' ' => '_', '<' => '_',
+//                '>' => '_', '?' => '_', '"' => '_', '=' => '_', '/' => '_',
+//                '|' => '_'
+//            )
+//        );
+//        $st2 = strtr($st,
+//            array(
+//                'А' => 'a', 'Б' => 'b', 'В' => 'v', 'Г' => 'g', 'Д' => 'd',
+//                'Е' => 'e', 'Ё' => 'e', 'Ж' => 'zh', 'З' => 'z', 'И' => 'i',
+//                'К' => 'k', 'Л' => 'l', 'М' => 'm', 'Н' => 'n', 'О' => 'o',
+//                'П' => 'p', 'Р' => 'r', 'С' => 's', 'Т' => 't', 'У' => 'u',
+//                'Ф' => 'ph', 'Х' => 'h', 'Ы' => 'y', 'Э' => 'e', 'Ь' => '',
+//                'Ъ' => '', 'Й' => 'y', 'Ц' => 'c', 'Ч' => 'ch', 'Ш' => 'sh',
+//                'Щ' => 'sh', 'Ю' => 'yu', 'Я' => 'ya'
+//            )
+//        );
+//        $translit = $st2;
+//        return $translit;
+//    }
 }
