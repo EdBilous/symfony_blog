@@ -1,18 +1,5 @@
 {% extends 'base.html.twig' %}
 
-
-{% block Searchform %}
-    {{ form_start(form) }}
-    {{ form_errors(form) }}
-
-    {{ form_row(form.inquiry) }}
-        <span class="input-group-btn">
-        {{ form_row(form.submit) }}
-        </span>
-    {{ form_end(form) }}
-
-{% endblock Searchform %}
-
 {% block content %}
     <div id="page-wrapper">
         <div class="row">

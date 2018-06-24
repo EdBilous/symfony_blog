@@ -28,7 +28,7 @@ class SearchType extends AbstractType
                     'class' => 'form-control')])
             ->add('submit', SubmitType::class, [
                 'label' => 'search', 'attr' => array(
-                    'class' => 'btn btn-default')]);
+                    'class' => 'btn btn-default btn-sm')]);
     }
 
     /**

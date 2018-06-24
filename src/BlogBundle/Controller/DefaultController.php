@@ -14,10 +14,10 @@ class DefaultController extends Controller
 
     /**
      * Lists all article entities.
-     * @Method({"GET", "POST"})
+     * @Method("GET")
      * @Route("/blog/index.html", name="blog_index_route")
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -25,25 +25,8 @@ class DefaultController extends Controller
             ->getRepository('AppBundle:Article')
             ->findAll();
 
-        $form = $this->createForm('AppBundle\Form\SearchType');
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $articlesRepository = $this->getDoctrine()->getRepository('AppBundle:Article');
-            $inquiry = $form->getData()['inquiry'];
-            $result = $articlesRepository->searchBy($inquiry);
-
-            return $this->render('@Blog/blog_view/articleSearch.html.twig', [
-                'articles' => $result,
-                'inquiry' => $inquiry,
-                'form' => $form->createView(),
-            ]);
-        }
-
         return $this->render('@Blog/blog_view/index.html.twig', [
-            'articles' => $articles,
-            'form' => $form->createView(),
-        ]);
+            'articles' => $articles]);
     }
 
     /**
@@ -82,5 +65,33 @@ class DefaultController extends Controller
         }
 
         return $this->render('@Blog/blog_view/categoryShow.html.twig', ['categorybytitle' => $categorybytitle['0']]);
+    }
+
+    /**
+     * @Route("/blog/search/", name="blog_search_route")
+     * @Method({"GET", "POST"})
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function searchArticlesAction(Request $request)
+    {
+        $form = $this->createForm('AppBundle\Form\SearchType');
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $articlesRepository = $this->getDoctrine()->getRepository('AppBundle:Article');
+            $inquiry = $form->getData()['inquiry'];
+            $result = $articlesRepository->searchBy($inquiry);
+
+            return $this->render('@Blog/blog_view/articleSearch.html.twig', [
+                'articles' => $result,
+                'inquiry' => $inquiry,
+                'form' => $form->createView(),
+            ]);
+        }
+
+        return $this->render('@Blog/blog_view/search_form.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 }

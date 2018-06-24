@@ -1,0 +1,15 @@
+<div class="card my-4">
+    <h5 class="card-header">Search</h5>
+    <div class="card-body">
+        <div class="input-group">
+            {{ form_start(form, {'action': path('blog_search_route')}) }}
+            {{ form_errors(form) }}
+
+            {{ form_row(form.inquiry) }}
+            <span class="input-group-btn">
+                        {{ form_row(form.submit) }}
+                    </span>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>

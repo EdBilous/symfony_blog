@@ -21,34 +21,17 @@ class ArticleController extends Controller
      * Lists all article entities.
      *
      * @Route("/articles", name="admin_articles")
-     * @Method({"GET", "POST"})
+     * @Method("GET")
      */
-    public function articlesAction(Request $request)
+    public function articlesAction()
     {
         $em = $this->getDoctrine()->getManager();
         $articles = $em
             ->getRepository('AppBundle:Article')
             ->findAll();
 
-        $form = $this->createForm('AppBundle\Form\SearchType');
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $articlesRepository = $this->getDoctrine()->getRepository('AppBundle:Article');
-            $inquiry = $form->getData()['inquiry'];
-            $result = $articlesRepository->searchBy($inquiry);
-
-            return $this->render('admin/article_search.html.twig', [
-                'articles' => $result,
-                'inquiry' => $inquiry,
-                'form' => $form->createView(),
-            ]);
-        }
-
         return $this->render('admin/article_list.html.twig', [
-            'articles' => $articles,
-            'form' => $form->createView(),
+            'articles' => $articles
         ]);
     }
 
@@ -128,6 +111,34 @@ class ArticleController extends Controller
             'article' => $article,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/articles/search/", name="app_search_route")
+     * @Method({"GET", "POST"})
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function searchArticlesAction(Request $request)
+    {
+        $form = $this->createForm('AppBundle\Form\SearchType');
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $articlesRepository = $this->getDoctrine()->getRepository('AppBundle:Article');
+            $inquiry = $form->getData()['inquiry'];
+            $result = $articlesRepository->searchBy($inquiry);
+
+            return $this->render('admin/article_search.html.twig', [
+                'articles' => $result,
+                'inquiry' => $inquiry,
+                'form' => $form->createView(),
+            ]);
+        }
+
+        return $this->render('admin/search_form.html.twig', [
+            'form' => $form->createView(),
         ]);
     }
 

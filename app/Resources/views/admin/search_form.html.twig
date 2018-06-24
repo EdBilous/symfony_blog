@@ -1,0 +1,10 @@
+{#Форма поиска по статьям#}
+
+{{ form_start(form, {'action': path('app_search_route')}) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.inquiry) }}
+<span class="input-group-btn">
+        {{ form_row(form.submit) }}
+        </span>
+{{ form_end(form) }}
