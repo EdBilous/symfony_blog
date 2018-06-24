@@ -13,7 +13,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        List
+                        <a class="fa fa-plus-square" href="{{ path('admin_article_new') }}"> Create a new article</a>
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -38,7 +38,7 @@
                                     </td>
                                     <td>{{ article.title }}</td>
                                     <td>{{ article.description }}</td>
-                                    <td>{% if article.createdAt %}{{ article.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                    <td>{% if article.createdAt %}{{ article.createdAt|date('Y-m-d') }}{% endif %}</td>
                                     <td>
                                         {% for category in article.getCategories %}
                                             {{ category }}

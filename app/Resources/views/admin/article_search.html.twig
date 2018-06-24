@@ -39,7 +39,7 @@
                                     </td>
                                     <td>{{ article.title }}</td>
                                     <td>{{ article.description }}</td>
-                                    <td>{% if article.createdAt %}{{ article.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                    <td>{% if article.createdAt %}{{ article.createdAt|date('Y-m-d') }}{% endif %}</td>
                                     <td>
                                         {% for category in article.getCategories %}
                                             {{ category }}

@@ -11,14 +11,14 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * User controller.
  *
- * @Route("admin")
+ * @Route("admin/users")
  */
 class UserController extends Controller
 {
     /**
      * Lists all user entities.
      *
-     * @Route("/users/", name="admin_users")
+     * @Route("/", name="admin_users")
      * @Method({"GET", "POST"})
      */
     public function indexAction(Request $request)

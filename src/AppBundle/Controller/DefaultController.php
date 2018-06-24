@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\User;
 
 class DefaultController extends Controller
 {
@@ -19,5 +20,36 @@ class DefaultController extends Controller
         ]);
     }
 
+    /**
+     *
+     * @Route("/admin/login.html", name="admin_login_route")
+     */
+    public function loginAction()
+    {
+        return $this->render('default/login.html.twig');
+    }
 
+    /**
+     *
+     * @Route("/admin/register.html", name="admin_register_route")
+     */
+    public function registerAction(Request $request)
+    {
+        // создаем форму
+        $user = new User();
+        $form = $this->createForm('AppBundle\Form\UserType', $user);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('blog_index_route');
+        }
+
+        return $this->render('default/register.html.twig',
+            ['form' => $form->createView()]);
+    }
 }

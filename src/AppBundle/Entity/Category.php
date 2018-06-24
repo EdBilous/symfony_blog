@@ -7,6 +7,8 @@ use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping\ManyToMany;
 use Doctrine\ORM\Mapping\ManyToOne;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Category
@@ -34,7 +36,7 @@ class Category
 
     /**
      * @var \DateTime
-     *
+     * @Assert\DateTime()
      * @ORM\Column(name="createdAt", type="datetime")
      */
     private $createdAt;
@@ -61,6 +63,9 @@ class Category
     private $user;
 
     public function __construct() {
+        $this->createdAt= new \DateTime();
+        $this->updateAt= new \DateTime();
+
         $this->articles = new \Doctrine\Common\Collections\ArrayCollection();
     }
 

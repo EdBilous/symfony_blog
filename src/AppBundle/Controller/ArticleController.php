@@ -13,14 +13,14 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Article controller.
  *
- * @Route("admin")
+ * @Route("admin/articles")
  */
 class ArticleController extends Controller
 {
     /**
      * Lists all article entities.
      *
-     * @Route("/articles", name="admin_articles")
+     * @Route("/", name="admin_articles")
      * @Method("GET")
      */
     public function articlesAction()
@@ -29,7 +29,7 @@ class ArticleController extends Controller
         $articles = $em
             ->getRepository('AppBundle:Article')
             ->findAll();
-
+//        Doctrine\Common\Util\Debug::dump();
         return $this->render('admin/article_list.html.twig', [
             'articles' => $articles
         ]);
@@ -38,7 +38,7 @@ class ArticleController extends Controller
     /**
      * Creates a new article entity.
      *
-     * @Route("/articles/new", name="admin_article_new")
+     * @Route("/new", name="admin_article_new")
      * @Method({"GET", "POST"})
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
@@ -46,7 +46,6 @@ class ArticleController extends Controller
     public function newAction(Request $request, ImagesUploaderService $ImagesUploaderService)
     {
         $article = new Article();
-
 
         $form = $this->createForm('AppBundle\Form\ArticleType', $article);
         $form->handleRequest($request);
@@ -76,7 +75,7 @@ class ArticleController extends Controller
     /**
      * Finds and displays a article entity.
      *
-     * @Route("/articles/{slug}", name="article_show")
+     * @Route("/{slug}", name="article_show")
      * @Method("GET")
      */
     public function showAction(Article $article)
@@ -93,7 +92,7 @@ class ArticleController extends Controller
     /**
      * Displays a form to edit an existing article entity.
      *
-     * @Route("articles/{slug}/edit", name="article_edit")
+     * @Route("/edit/{slug}/", name="article_edit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Article $article)
@@ -115,7 +114,7 @@ class ArticleController extends Controller
     }
 
     /**
-     * @Route("/articles/search/", name="app_search_route")
+     * @Route("/search/", name="app_search_route")
      * @Method({"GET", "POST"})
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
@@ -142,10 +141,11 @@ class ArticleController extends Controller
         ]);
     }
 
+
     /**
      * Deletes a article entity.
      *
-     * @Route("/articles/{id}/delete", name="article_delete")
+     * @Route("/delete/{slug}/", name="article_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Article $article)
@@ -172,8 +172,9 @@ class ArticleController extends Controller
     private function createDeleteForm(Article $article)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('article_delete', ['id' => $article->getId()]))
-            ->setMethod('DELETE')
-            ->getForm();
+        ->setAction($this->generateUrl('article_delete', array('slug' => $article->getSlug())))
+        ->setMethod('DELETE')
+        ->getForm()
+        ;
     }
 }

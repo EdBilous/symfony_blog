@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Category controller.
  *
- * @Route("category")
+ * @Route("admin/category")
  */
 class CategoryController extends Controller
 {
@@ -27,7 +27,7 @@ class CategoryController extends Controller
 
         $categories = $em->getRepository('AppBundle:Category')->findAll();
 
-        return $this->render('category/index.html.twig', array(
+        return $this->render('admin/category_list.html.twig', array(
             'categories' => $categories,
         ));
     }
@@ -49,10 +49,10 @@ class CategoryController extends Controller
             $em->persist($category);
             $em->flush();
 
-            return $this->redirectToRoute('category_show', array('id' => $category->getId()));
+            return $this->redirectToRoute('category_index');
         }
 
-        return $this->render('category/new.html.twig', array(
+        return $this->render('admin/category_new.html.twig', array(
             'category' => $category,
             'form' => $form->createView(),
         ));
@@ -61,7 +61,7 @@ class CategoryController extends Controller
     /**
      * Finds and displays a category entity.
      *
-     * @Route("/{id}", name="category_show")
+     * @Route("/{id}/", name="category_show")
      * @Method("GET")
      */
     public function showAction(Category $category)
@@ -102,7 +102,7 @@ class CategoryController extends Controller
     /**
      * Deletes a category entity.
      *
-     * @Route("/{id}", name="category_delete")
+     * @Route("/delete/{id}", name="category_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Category $category)

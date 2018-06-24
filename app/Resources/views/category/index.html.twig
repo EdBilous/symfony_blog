@@ -16,7 +16,7 @@
             <tr>
                 <td><a href="{{ path('category_show', { 'id': category.id }) }}">{{ category.id }}</a></td>
                 <td>{{ category.title }}</td>
-                <td>{% if category.createdAt %}{{ category.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if category.createdAt %}{{ category.createdAt|date('Y-m-d H:is:') }}{% endif %}</td>
                 <td>{% if category.updateAt %}{{ category.updateAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                     <ul>
