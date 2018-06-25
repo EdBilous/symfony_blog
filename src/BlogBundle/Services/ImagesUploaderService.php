@@ -21,9 +21,9 @@ class ImagesUploaderService
      * ImagesUploaderService constructor.
      * @param $targetDir
      */
-    public function __construct()
+    public function __construct($targetDir)
     {
-        $this->targetDir = "uploads/images";
+        $this->targetDir = $targetDir;
     }
 
     /**

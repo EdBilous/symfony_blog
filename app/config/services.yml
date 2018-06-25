@@ -1,7 +1,7 @@
 # Learn more about services, parameters and containers at
 # https://symfony.com/doc/current/service_container.html
-parameters:
-    images_directory: 'uploads/images'
+#parameters:
+#    images_directory: 'uploads/images'
     #parameter_name: value
 
 services:
@@ -52,7 +52,7 @@ services:
     BlogBundle\Services\ImagesUploaderService:
         public: true
         arguments:
-        $targetDir: '%images_directory%'
+          $targetDir: 'uploads/images'
 
     AppBundle\EventListener\ImagesUploadListener:
         tags:

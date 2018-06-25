@@ -14,7 +14,6 @@ class DefaultController extends Controller
 
     /**
      * Lists all article entities.
-     * @Method("GET")
      * @Route("/blog/index.html", name="blog_index_route")
      */
     public function indexAction()
