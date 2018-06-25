@@ -1,7 +1,7 @@
-{% extends '@Blog/admin/login.html.twig' %}
+{% extends 'default/login.html.twig' %}
 
 {% block form %}
-<div class="row">
+    <div class="row">
     <div class="col-md-4 col-md-offset-4">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -10,28 +10,28 @@
             <div class="panel-body">
                 {{ form_start(form) }}
                 <fieldset>
-                        <div class="form-group">
-                            {{ form_row(form.firstName) }}
-                        </div>
-                        <div class="form-group">
-                            {{ form_row(form.lastName) }}
-                        </div>
-                        <div class="form-group">
-                            {{ form_row(form.login) }}
-                        </div>
-                        <div class="form-group">
-                            {{ form_row(form.email) }}
-                        </div>
-                            <div class="form-group">
-                                {{ form_row(form.password) }}
-                            </div>
-                        <div class="form-group">
-                            <label for="exampleConfirmPassword">Confirm password</label>
-                            <input class="form-control" id="exampleConfirmPassword" type="password"
-                                   placeholder="Confirm password">
-                        </div>
-                        {{ form_row(form.submit) }}
-                    </fieldset>
+                    <div class="form-group">
+                        {{ form_row(form.firstName) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.lastName) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.login) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.email) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.password) }}
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleConfirmPassword">Confirm password</label>
+                        <input class="form-control" id="exampleConfirmPassword" type="password"
+                               placeholder="Confirm password">
+                    </div>
+                    {{ form_row(form.submit) }}
+                </fieldset>
                 {{ form_end(form) }}
 
                 <div class="checkbox">
@@ -43,4 +43,4 @@
             </div>
         </div>
     </div>
-    {% endblock form %}
+{% endblock form %}

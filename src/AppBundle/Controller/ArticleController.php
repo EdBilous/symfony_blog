@@ -75,7 +75,7 @@ class ArticleController extends Controller
     /**
      * Finds and displays a article entity.
      *
-     * @Route("/{slug}", name="article_show")
+     * @Route("/show/{slug}/", name="article_show")
      * @Method("GET")
      */
     public function showAction(Article $article)
@@ -127,6 +127,7 @@ class ArticleController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $articlesRepository = $this->getDoctrine()->getRepository('AppBundle:Article');
             $inquiry = $form->getData()['inquiry'];
+
             $result = $articlesRepository->searchBy($inquiry);
 
             return $this->render('admin/article_search.html.twig', [

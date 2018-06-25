@@ -52,19 +52,28 @@ class DefaultController extends Controller
      * @Route("/blog/category/{category}", name="blog_category_route")
      * @Method("GET")
      */
-    public function categoryAction($category)
+    public function categoryAction($category = null)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $categorybytitle = $em
+        $categoriesList = $em
             ->getRepository('AppBundle:Category')
-            ->findBy(['title' => $category]);
+            ->findAll();
 
-        if (!$categorybytitle) {
-            throw $this->createNotFoundException("No category found for $category");
+        if($category) {
+
+            $categorybytitle = $em
+                ->getRepository('AppBundle:Category')
+                ->findBy(['title' => $category]);
+
+            if (!$categorybytitle) {
+                throw $this->createNotFoundException("No category found for $category");
+            }
+
+            return $this->render('@Blog/blog_view/categoryShow.html.twig', ['categorybytitle' => $categorybytitle['0']]);
         }
 
-        return $this->render('@Blog/blog_view/categoryShow.html.twig', ['categorybytitle' => $categorybytitle['0']]);
+        return $this->render('@Blog/blog_view/categoriesList.html.twig', ['categories' => $categoriesList]);
     }
 
     /**
@@ -94,4 +103,6 @@ class DefaultController extends Controller
             'form' => $form->createView(),
         ]);
     }
+
+
 }

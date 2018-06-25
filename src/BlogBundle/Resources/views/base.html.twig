@@ -85,23 +85,12 @@
             )) }}
         {% endblock Search %}
         <!-- Categories Widget -->
-        <div class="card my-4">
-            <h5 class="card-header">Categories</h5>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <ul class="list-group">
-                            <li>
-                                <a href="{{ path('blog_category_route', { 'category': "nature" }) }}">Nature</a>
-                            </li>
-                            <li>
-                                <a href="{{ path('blog_category_route', { 'category': "another" }) }}">Another</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% block Categories %}
+            {{ render(controller(
+                'BlogBundle:Default:category'
+            )) }}
+        {% endblock Categories %}
+
 
         <!-- Side Widget -->
         <div class="card my-4">
